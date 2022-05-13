@@ -16,11 +16,9 @@ export default function Payment() {
   const [disabled, setDisabled] = useState(true);
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState("");
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const postData = async () => {
-      setLoading(true);
       const res = await fetch(
         `https://amazon-clone-with-nodejs.herokuapp.com/payment?total=${
           getBasketTotal(basket) * 100
@@ -45,7 +43,6 @@ export default function Payment() {
         return;
       }
 
-      setLoading(false);
     };
 
     postData();
@@ -136,13 +133,7 @@ export default function Payment() {
                   onClick={handleSubmit}
                 >
                   <span>
-                    {processing ? (
-                      <p>Processing</p>
-                    ) : loading ? (
-                      "Loading..."
-                    ) : (
-                      "Buy Now"
-                    )}
+                    {processing ? <p>Processing</p> : 'Buy Now'}
                   </span>
                 </button>
               </div>

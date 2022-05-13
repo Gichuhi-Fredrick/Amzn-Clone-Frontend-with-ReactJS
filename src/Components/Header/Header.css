@@ -73,5 +73,6 @@ span {
 }
 
 span > p {
+  display: inline-block;
   text-decoration: none;
 }

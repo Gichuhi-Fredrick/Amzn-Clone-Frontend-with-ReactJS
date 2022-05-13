@@ -1,0 +1,33 @@
+.orders {
+  padding: 20px 80px;
+}
+
+.orders > h1 {
+  margin: 30px 0;
+}
+
+.orders__title {
+  top: 70px;
+  width: 100%;
+  position: sticky;
+  margin: 0 auto;
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: rows;
+  background-color: #131921;
+  justify-content: space-between;
+}
+
+.orders__total {
+  margin-top: 10px;
+}
+
+.order__total {
+  font-weight: 500;
+  text-align: right;
+}
+
+.orders_order {
+  z-index: 0;
+}

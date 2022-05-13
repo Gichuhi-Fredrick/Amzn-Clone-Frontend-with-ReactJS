@@ -71,3 +71,7 @@
 span {
   color: white;
 }
+
+span > p {
+  text-decoration: none;
+}

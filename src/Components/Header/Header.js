@@ -30,7 +30,7 @@ export default function Header() {
         <Link to={!isLogged && "/login"}>
           <div className="header__option">
             <span className="header__optionLineOne">
-              {isLogged && "/login" ? user.email : "Guest"}
+              {isLogged && "/login" ? user.email : <p>Guest</p>}
             </span>
             <span className="header__optionLineTwo">
               {!isLogged && "/login" ? (

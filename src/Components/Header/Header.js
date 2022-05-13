@@ -52,14 +52,22 @@ export default function Header() {
 
         <Link to="/Orders">
           <div className="header__option">
-            <span className="header__optionLineOne">Returns</span>
-            <span className="header__optionLineTwo">& Orders</span>
+            <span className="header__optionLineOne">
+              <p>Returns</p>
+            </span>
+            <span className="header__optionLineTwo">
+              <p>& Orders</p>
+            </span>
           </div>
         </Link>
 
         <div className="header__option">
-          <span className="header__optionLineOne">Your</span>
-          <span className="header__optionLineTwo ">Prime</span>
+          <span className="header__optionLineOne">
+            <p>Your</p>
+          </span>
+          <span className="header__optionLineTwo ">
+            <p>Prime</p>
+          </span>
         </div>
 
         <Link to="/checkout">

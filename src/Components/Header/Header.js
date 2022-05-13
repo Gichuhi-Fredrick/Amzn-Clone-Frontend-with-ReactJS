@@ -30,7 +30,7 @@ export default function Header() {
         <Link to={!isLogged && "/login"}>
           <div className="header__option">
             <span className="header__optionLineOne">
-              {isLogged && "/login" ? user.email : <p>Guest</p>}
+              {isLogged && "/login" ? <p>{user.email} </p> : <p>Guest</p>}
             </span>
             <span className="header__optionLineTwo">
               {!isLogged && "/login" ? (
@@ -74,7 +74,7 @@ export default function Header() {
           <div className="header__optionBasket">
             <ShoppingCartIcon />
             <span className="header__optionLineTwo header__basketCount">
-              {basket?.length}
+              <p>{basket?.length} </p>
             </span>
           </div>
         </Link>

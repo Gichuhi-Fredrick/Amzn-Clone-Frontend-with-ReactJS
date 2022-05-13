@@ -31,7 +31,7 @@ export default function Login() {
       {
         method: "post",
         headers: {
-          Origin: "http://localhost:3000/login",
+          Origin: "https://amznclone.herokuapp.com",
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -60,7 +60,7 @@ export default function Login() {
         method: "post",
         headers: {
           "Content-Type": "application/json",
-          Origin: "http://localhost:3000/login",
+          Origin: "https://amznclone.herokuapp.com",
         },
         body: JSON.stringify({
           email: email,

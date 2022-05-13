@@ -19,7 +19,7 @@ export default function Orders() {
           method: "post",
           headers: {
             "Content-Type": "application/json",
-            Origin: "http://localhost:3000",
+            Origin: "https://amznclone.herokuapp.com",
             Authorization: sessionStorage.getItem("token"),
           },
           body: JSON.stringify({

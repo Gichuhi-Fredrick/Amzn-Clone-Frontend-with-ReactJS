@@ -14,6 +14,10 @@ home {
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
+.home__row {
+  gap: 1rem;
+}
+
 @media (min-width: 768px) {
   .home__row {
     display: flex;

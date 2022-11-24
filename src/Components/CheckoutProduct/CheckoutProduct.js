@@ -10,7 +10,7 @@ export default function CheckoutProduct({
   rating,
   hideButton,
 }) {
-  const [{ basket }, dispatch] = useStateValue();
+  const [dispatch] = useStateValue();
 
   const removeFromBasket = () => {
     dispatch({

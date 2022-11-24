@@ -5,7 +5,7 @@ import { UserContext } from "../../App";
 import CurrencyFormat from "react-currency-format";
 
 export default function Orders() {
-  const { user } = useContext(UserContext);
+  const { user, isOpen } = useContext(UserContext);
   const [orders, setOrders] = useState([]);
   const [created, setCreated] = useState();
   const [amount, setAmount] = useState();
@@ -60,24 +60,26 @@ export default function Orders() {
 
   return (
     <div className="orders">
-      <div className="orders__title">
-        <h1>Your Orders</h1>
-        <div className="orders__total">
-          <CurrencyFormat
-            renderText={(value) => (
-              <>
-                <h3 className="order__total">Order Total: {value}</h3>
-              </>
-            )}
-            decimalScale={2}
-            value={amount / 100} //Convert to dollars from cents
-            displayType={"text"}
-            thousandSeparotor={true}
-            prefix={"$"}
-          />
-          <p className="order__id">{<small>Order Id: {id}</small>}</p>
+      {!isOpen && (
+        <div className="orders__title">
+          <h1>Your Orders</h1>
+          <div className="orders__total">
+            <CurrencyFormat
+              renderText={(value) => (
+                <>
+                  <h3 className="order__total">Order Total: {value}</h3>
+                </>
+              )}
+              decimalScale={2}
+              value={amount / 100} //Convert to dollars from cents
+              displayType={"text"}
+              thousandSeparotor={true}
+              prefix={"$"}
+            />
+            <p className="order__id">{<small>Order Id: {id}</small>}</p>
+          </div>
         </div>
-      </div>
+      )}
 
       <div className="orders__order">{orderComponent}</div>
     </div>

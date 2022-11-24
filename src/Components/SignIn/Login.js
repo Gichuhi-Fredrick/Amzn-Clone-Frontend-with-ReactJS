@@ -82,14 +82,16 @@ export default function Login() {
   };
 
   return (
-    <div className="login__logo">
-      <Link to="/">
-        <img
-          className="login__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
-          alt="login"
-        />
-      </Link>
+    <div className="login">
+      <div className="login__logo">
+        <Link to="/">
+          <img
+            className="login__logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
+            alt="login"
+          />
+        </Link>
+      </div>
 
       <div className="login__container">
         <h1>Login</h1>
@@ -126,7 +128,7 @@ export default function Login() {
             onClick={handleLogin}
             className="login__signInButton"
           >
-            Sign In
+            Login
           </button>
         </div>
 

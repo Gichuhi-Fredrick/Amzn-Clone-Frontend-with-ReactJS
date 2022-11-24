@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header.js";
 import Home from "./Components/Home/Home";
@@ -24,6 +24,30 @@ function App() {
   const [user, setUser] = useState({ email: "" });
   const [isLogged, setIsLogged] = useState(false);
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+  const [input, setInput] = useState("");
+
+  useEffect(() => {
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
+
+  function getWindowSize() {
+    const { innerWidth, innerHeight } = window;
+    return { innerWidth, innerHeight };
+  }
+
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
 
   const loadUser = (data) => {
     setUser({ email: data.data.email });
@@ -65,6 +89,9 @@ function App() {
     submitted,
     password,
     isLogged,
+    isOpen,
+    windowSize,
+    toggle,
     loadUser,
     handleEmail,
     handleName,
